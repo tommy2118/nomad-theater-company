@@ -1,284 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nomad Theater Company | Professional Theater Productions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'ntc-gold': '#D4AF37',      // Logo gold color
-                        'ntc-gold-light': '#E5C76A', // Lighter gold for accents
-                        'ntc-gold-dark': '#B38B22',  // Darker gold for depth
-                        'ntc-black': '#1A1A1A',      // Rich black from logo
-                        'ntc-white': '#FFFFFF',      // Pure white for contrast
-                    },
-                    fontFamily: {
-                        'display': ['Trajan Pro', 'serif'], // For main headings
-                        'body': ['Open Sans', 'sans-serif']  // For body text
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nomad Theater Company | Professional Theater Productions</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'ntc-gold': '#D4AF37',      // Logo gold color
+                            'ntc-gold-light': '#E5C76A', // Lighter gold for accents
+                            'ntc-gold-dark': '#B38B22',  // Darker gold for depth
+                            'ntc-black': '#1A1A1A',      // Rich black from logo
+                            'ntc-white': '#FFFFFF',      // Pure white for contrast
+                        },
+                        fontFamily: {
+                            'display': ['Trajan Pro', 'serif'], // For main headings
+                            'body': ['Open Sans', 'sans-serif']  // For body text
+                        }
                     }
                 }
             }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+        </script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
-        .logo-shadow {
-            filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
-        }
+            .logo-shadow {
+                filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+            }
 
-        .hero-gradient {
-            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.7));
-        }
+            .hero-gradient {
+                background: linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.7));
+            }
 
-        .gold-border {
-            border: 1px solid #D4AF37;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-    </style>
-</head>
-<body class="bg-ntc-black text-ntc-white">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-ntc-black/95 gold-border border-t-0 border-x-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-24 items-center">
-                <div class="flex-shrink-0">
-                    <a href="/" class="flex items-center space-x-4">
-                        <img src="assets/ntc-logo.webp" alt="Nomad Theater Company" class="h-16 w-auto logo-shadow">
+            .gold-border {
+                border: 1px solid #D4AF37;
+                box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            }
+        </style>
+    </head>
+    <body class="bg-ntc-black text-ntc-white">
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 bg-ntc-black/95 gold-border border-t-0 border-x-0">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-24 items-center">
+                    <div class="flex-shrink-0">
+                        <a href="/" class="flex items-center space-x-4">
+                            <img src="assets/ntc-logo.webp" alt="Nomad Theater Company" class="h-16 w-auto logo-shadow">
+                        </a>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="flex items-center space-x-8">
+                            <a href="/" class="text-ntc-gold hover:text-ntc-gold-light transition-colors">Home</a>
+                            <a href="/about" class="text-ntc-white hover:text-ntc-gold transition-colors">About</a>
+                            <a href="/season" class="text-ntc-white hover:text-ntc-gold transition-colors">2025 Season</a>
+                            <a href="/support" class="text-ntc-white hover:text-ntc-gold transition-colors">Support</a>
+                            <a href="/contact" class="text-ntc-white hover:text-ntc-gold transition-colors">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="relative min-h-screen flex items-center justify-center">
+            <div class="absolute inset-0 bg-[url('assets/theater-bg.webp')] bg-cover bg-center"></div>
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="relative z-10 max-w-4xl mx-auto text-center px-4" data-aos="fade-up">
+                <img src="assets/ntc-logo.webp" alt="NTC Logo" class="w-48 h-48 mx-auto mb-8 logo-shadow">
+                <h1 class="text-5xl md:text-7xl font-display text-ntc-white mb-6">
+                    Nomad Theater Company
+                </h1>
+                <p class="text-xl md:text-2xl text-ntc-gold mb-12">
+                    Professional Theater, Anywhere and Everywhere
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="/season"
+                       class="px-8 py-4 bg-ntc-gold text-ntc-black font-semibold rounded
+                              hover:bg-ntc-gold-light transition-all transform hover:scale-105">
+                        View 2025 Season
                     </a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="flex items-center space-x-8">
-                        <a href="/" class="text-ntc-gold hover:text-ntc-gold-light transition-colors">Home</a>
-                        <a href="/about" class="text-ntc-white hover:text-ntc-gold transition-colors">About</a>
-                        <a href="/season" class="text-ntc-white hover:text-ntc-gold transition-colors">2025 Season</a>
-                        <a href="/support" class="text-ntc-white hover:text-ntc-gold transition-colors">Support</a>
-                        <a href="/contact" class="text-ntc-white hover:text-ntc-gold transition-colors">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="relative min-h-screen flex items-center justify-center">
-        <div class="absolute inset-0 bg-[url('assets/theater-bg.webp')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 hero-gradient"></div>
-        <div class="relative z-10 max-w-4xl mx-auto text-center px-4" data-aos="fade-up">
-            <img src="assets/ntc-logo.webp" alt="NTC Logo" class="w-48 h-48 mx-auto mb-8 logo-shadow">
-            <h1 class="text-5xl md:text-7xl font-display text-ntc-white mb-6">
-                Nomad Theater Company
-            </h1>
-            <p class="text-xl md:text-2xl text-ntc-gold mb-12">
-                Professional Theater, Anywhere and Everywhere
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="/season"
-                   class="px-8 py-4 bg-ntc-gold text-ntc-black font-semibold rounded
-                          hover:bg-ntc-gold-light transition-all transform hover:scale-105">
-                    View 2025 Season
-                </a>
-                <a href="#booking"
-                   class="px-8 py-4 border-2 border-ntc-gold text-ntc-gold font-semibold rounded
-                          hover:bg-ntc-gold hover:text-ntc-black transition-all transform hover:scale-105">
-                    Book NTC
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Featured Productions -->
-    <section class="py-24 bg-ntc-black">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-display text-center text-ntc-gold mb-16">Current Productions</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-lg gold-border">
-                        <img src="assets/production1.webp" alt="Current Production"
-                             class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-ntc-black to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-2xl font-display text-ntc-gold mb-2">Little Shop of Horrors</h3>
-                            <p class="text-ntc-white">A dark comedy musical</p>
-                            <a href="/season"
-                               class="block text-ntc-gold mt-4 hover:text-ntc-gold-light transition-colors">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-lg gold-border">
-                        <img src="assets/production2.webp" alt="Current Production"
-                             class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-ntc-black to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-2xl font-display text-ntc-gold mb-2">The Importance of Being Earnest</h3>
-                            <p class="text-ntc-white">A classic comedy play</p>
-                            <a href="/season"
-                               class="block text-ntc-gold mt-4 hover:text-ntc-gold-light transition-colors">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-lg gold-border">
-                        <img src="assets/production3.webp" alt="Current Production"
-                             class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-ntc-black to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-2xl font-display text-ntc-gold mb-2">The Glass Menagerie</h3>
-                            <p class="text-ntc-white">A dramatic play</p>
-                            <a href="/season"
-                               class="block text-ntc-gold mt-4 hover:text-ntc-gold-light transition-colors">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-lg gold-border">
-                        <img src="assets/production4.webp" alt="Current Production"
-                                                           class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-ntc-black to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-2xl font-display text-ntc-gold mb-2">The Tempest</h3>
-                            <p class="text-ntc-white">A Shakespearean play</p>
-                            <a href="/season"
-                               class="block text-ntc-gold mt-4 hover:text-ntc-gold-light transition-colors">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-
-    <!-- Booking Form -->
-    <section id="booking" class="py-24 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-4xl font-display text-center text-ntc-gold mb-16">Book Nomad Theater Company</h2>
-            <form class="space-y-8" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <label class="block text-ntc-gold mb-2">Name</label>
-                        <input type="text" required
-                               class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                      focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
-                    </div>
-                    <div>
-                        <label class="block text-ntc-gold mb-2">Email</label>
-                        <input type="email" required
-                               class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                      focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-ntc-gold mb-2">Event Date</label>
-                    <input type="date" required
-                           class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                  focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
-                </div>
-                <div>
-                    <label class="block text-ntc-gold mb-2">Event Type</label>
-                    <select required
-                            class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                   focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
-                        <option value="">Select Event Type</option>
-                        <option value="play">Play</option>
-                        <option value="musical">Musical</option>
-                        <option value="workshop">Workshop</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-ntc-gold mb-2">Message</label>
-                    <textarea required rows="4"
-                              class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                     focus:outline-none focus:ring-2 focus:ring-ntc-gold-light"></textarea>
-                </div>
-                <div>
-                    <label class="block text-ntc-gold mb-2">Budget</label>
-                    <input type="number" required
-                           class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                  focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
-                </div>
-                <div>
-                    <label class="block text-ntc-gold mb-2">Number of Attendees</label>
-                    <input type="number" required
-                           class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                  focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
-                </div>
-                <div>
-                    <label class="block text-ntc-gold mb-2">Location</label>
-                    <input type="text" required
-                           class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                  focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
-                </div>
-                <div>
-                    <label class="block text-ntc-gold mb-2">Additional Information</label>
-                    <textarea rows="4"
-                              class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                     focus:outline-none focus:ring-2 focus:ring-ntc-gold-light"></textarea>
-                </div>
-                <div>
-                    <label class="block text-ntc-gold mb-2">How did you hear about us?</label>
-                    <input type="text"
-                           class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
-                                  focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
-                </div>
-                <button type="submit"
-                        class="w-full py-4 bg-ntc-gold text-ntc-black font-semibold rounded-lg
-                               hover:bg-ntc-gold-light transition-all transform hover:scale-105">
-                    Submit Booking Request
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-ntc-black py-16 gold-border border-b-0 border-x-0">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-12">
-                <div>
-                    <img src="assets/ntc-logo.webp" alt="NTC Logo" class="h-24 w-auto mb-6">
-                    <p class="text-ntc-gold">nomadtheatercompany@gmail.com</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-display text-ntc-gold mb-6">Follow Us</h3>
-                    <div class="flex space-x-6">
-                        <!-- Add social media icons -->
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-display text-ntc-gold mb-6">Support Us</h3>
-                    <a href="https://www.patreon.com/" class="text-ntc-white hover:text-ntc-gold">
-                        Become a Patron
+                    <a href="#booking"
+                       class="px-8 py-4 border-2 border-ntc-gold text-ntc-gold font-semibold rounded
+                              hover:bg-ntc-gold hover:text-ntc-black transition-all transform hover:scale-105">
+                        Book NTC
+                    </a>
+                    <a href="#support"
+                       class="px-8 py-4 border-2 border-ntc-gold text-ntc-gold font-semibold rounded
+                              hover:bg-ntc-gold hover:text-ntc-black transition-all transform hover:scale-105">
+                        Support the Arts
                     </a>
                 </div>
             </div>
-            <div class="mt-12 pt-8 border-t border-ntc-gold/20 text-center">
-                <p class="text-ntc-white/60">&copy; 2025 Nomad Theater Company. All rights reserved.</p>
-            </div>
         </div>
-    </footer>
+        <!-- Support the Arts Section -->
+        <section id="support" class="py-24 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-display text-center text-ntc-gold mb-16">Support Local Theater</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Subscription Card -->
+                    <div class="support-card bg-ntc-black p-8 rounded-lg gold-border" data-aos="fade-up">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-ticket-alt text-4xl text-ntc-gold mb-4"></i>
+                            <h3 class="text-2xl font-display text-ntc-gold">Season Subscription</h3>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-ntc-gold mt-1 mr-2"></i>
+                                <span>Early access to season schedule</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-ntc-gold mt-1 mr-2"></i>
+                                <span>Discounted ticket prices</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-ntc-gold mt-1 mr-2"></i>
+                                <span>Exclusive behind-the-scenes content</span>
+                            </li>
+                        </ul>
+                        <a href="/subscribe" class="block text-center py-3 bg-ntc-gold text-ntc-black rounded-lg hover:bg-ntc-gold-light transition-colors">
+                            Subscribe Now
+                        </a>
+                    </div>
 
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
-</body>
+                    <!-- One-Time Donation Card -->
+                    <div class="support-card bg-ntc-black p-8 rounded-lg gold-border" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-gift text-4xl text-ntc-gold mb-4"></i>
+                            <h3 class="text-2xl font-display text-ntc-gold">Make a Donation</h3>
+                        </div>
+                        <p class="mb-8">Your contribution helps us bring quality theater to our community, covering production costs and keeping ticket prices accessible.</p>
+                        <a href="/donate" class="block text-center py-3 border-2 border-ntc-gold text-ntc-gold rounded-lg hover:bg-ntc-gold hover:text-ntc-black transition-colors">
+                            Donate Today
+                        </a>
+                    </div>
+
+                    <!-- Special Events Card -->
+                    <div class="support-card bg-ntc-black p-8 rounded-lg gold-border" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-star text-4xl text-ntc-gold mb-4"></i>
+                            <h3 class="text-2xl font-display text-ntc-gold">Special Events</h3>
+                        </div>
+                        <p class="mb-8">Interested in having Nomad Theater Company perform at your charity event or community gathering?</p>
+                        <a href="/contact" class="block text-center py-3 border-2 border-ntc-gold text-ntc-gold rounded-lg hover:bg-ntc-gold hover:text-ntc-black transition-colors">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Featured Productions -->
+        <section class="py-24 bg-ntc-black">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-display text-center text-ntc-gold mb-16">Current Productions</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="group">
+                        <div class="relative overflow-hidden rounded-lg gold-border">
+                            <img src="assets/production1.webp" alt="Current Production"
+                                                               class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-ntc-black to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="text-2xl font-display text-ntc-gold mb-2">Little Shop of Horrors</h3>
+                                <p class="text-ntc-white">A dark comedy musical</p>
+                                <a href="/season"
+                                   class="block text-ntc-gold mt-4 hover:text-ntc-gold-light transition-colors">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="relative overflow-hidden rounded-lg gold-border">
+                            <img src="assets/production2.webp" alt="Current Production"
+                                                               class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-ntc-black to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="text-2xl font-display text-ntc-gold mb-2">The Importance of Being Earnest</h3>
+                                <p class="text-ntc-white">A classic comedy play</p>
+                                <a href="/season"
+                                   class="block text-ntc-gold mt-4 hover:text-ntc-gold-light transition-colors">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="relative overflow-hidden rounded-lg gold-border">
+                            <img src="assets/production3.webp" alt="Current Production"
+                                                               class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-ntc-black to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="text-2xl font-display text-ntc-gold mb-2">The Glass Menagerie</h3>
+                                <p class="text-ntc-white">A dramatic play</p>
+                                <a href="/season"
+                                   class="block text-ntc-gold mt-4 hover:text-ntc-gold-light transition-colors">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="relative overflow-hidden rounded-lg gold-border">
+                            <img src="assets/production4.webp" alt="Current Production"
+                                                               class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-ntc-black to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="text-2xl font-display text-ntc-gold mb-2">The Tempest</h3>
+                                <p class="text-ntc-white">A Shakespearean play</p>
+                                <a href="/season"
+                                   class="block text-ntc-gold mt-4 hover:text-ntc-gold-light transition-colors">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- Community Impact Section -->
+        <section class="py-24 bg-gradient-to-b from-[#2A2A2A] to-ntc-black">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-display text-center text-ntc-gold mb-16">Our Impact</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6" data-aos="fade-up">
+                        <div class="text-4xl font-bold text-ntc-gold mb-4">1,200+</div>
+                        <div class="text-lg">Annual Audience Members</div>
+                    </div>
+                    <div class="p-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-4xl font-bold text-ntc-gold mb-4">4</div>
+                        <div class="text-lg">Productions Per Year</div>
+                    </div>
+                    <div class="p-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-4xl font-bold text-ntc-gold mb-4">100%</div>
+                        <div class="text-lg">Community Focused</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-24 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
+            <div class="max-w-3xl mx-auto px-4">
+                <h2 class="text-4xl font-display text-center text-ntc-gold mb-6">Contact Us</h2>
+                <p class="text-center text-ntc-white/80 mb-16 max-w-2xl mx-auto">
+                    Have a question about our productions? Interested in collaborating on a community event?
+                    We'd love to hear from you.
+                </p>
+
+                <form class="space-y-8" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY">
+
+                    <!-- Name and Email -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-ntc-gold mb-2">Name</label>
+                            <input type="text" required
+                                   class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
+                                          focus:outline-none focus:ring-2 focus:ring-ntc-gold-light
+                                          placeholder-ntc-white/30">
+                        </div>
+                        <div>
+                            <label class="block text-ntc-gold mb-2">Email</label>
+                            <input type="email" required
+                                   class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
+                                          focus:outline-none focus:ring-2 focus:ring-ntc-gold-light
+                                          placeholder-ntc-white/30">
+                        </div>
+                    </div>
+
+                    <!-- Inquiry Type -->
+                    <div>
+                        <label class="block text-ntc-gold mb-2">Type of Inquiry</label>
+                        <select required
+                                class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
+                                       focus:outline-none focus:ring-2 focus:ring-ntc-gold-light
+                                       text-ntc-white">
+                            <option value="">Select Inquiry Type</option>
+                            <option value="general">General Question</option>
+                            <option value="tickets">Ticket Information</option>
+                            <option value="support">Support & Donations</option>
+                            <option value="special-event">Special Event Collaboration</option>
+                            <option value="press">Press & Media</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Special Event Details (conditionally shown) -->
+                    <div class="special-event-fields hidden">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-ntc-gold mb-2">Event Date (if applicable)</label>
+                                <input type="date"
+                                       class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
+                                              focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
+                            </div>
+                            <div>
+                                <label class="block text-ntc-gold mb-2">Event Location</label>
+                                <input type="text"
+                                       class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
+                                              focus:outline-none focus:ring-2 focus:ring-ntc-gold-light
+                                              placeholder-ntc-white/30"
+                                       placeholder="City, State">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label class="block text-ntc-gold mb-2">Message</label>
+                        <textarea required rows="4"
+                                           class="w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg
+                                                  focus:outline-none focus:ring-2 focus:ring-ntc-gold-light
+                                                  placeholder-ntc-white/30"
+                                           placeholder="Tell us more about your inquiry..."></textarea>
+                    </div>
+
+                    <!-- Subscribe Option -->
+                    <div class="flex items-center space-x-3">
+                        <input type="checkbox" id="subscribe"
+                                               class="w-5 h-5 bg-ntc-black border border-ntc-gold rounded
+                                                      focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
+                        <label for="subscribe" class="text-ntc-white/80">
+                            Keep me updated about upcoming productions and events
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit"
+                            class="w-full py-4 bg-ntc-gold text-ntc-black font-semibold rounded-lg
+                                   hover:bg-ntc-gold-light transition-all transform hover:scale-105
+                                   focus:outline-none focus:ring-2 focus:ring-ntc-gold-dark">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-ntc-black py-16 gold-border border-b-0 border-x-0">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div>
+                        <img src="assets/ntc-logo.webp" alt="NTC Logo" class="h-24 w-auto mb-6">
+                        <p class="text-ntc-gold">nomadtheatercompany@gmail.com</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-display text-ntc-gold mb-6">Follow Us</h3>
+                        <div class="flex space-x-6">
+                            <!-- Add social media icons -->
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-display text-ntc-gold mb-6">Support Us</h3>
+                        <a href="https://www.patreon.com/" class="text-ntc-white hover:text-ntc-gold">
+                            Become a Patron
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-ntc-gold/20 text-center">
+                    <p class="text-ntc-white/60">&copy; 2025 Nomad Theater Company. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        </script>
+        <script>
+            // Show/hide special event fields based on inquiry type
+            const inquirySelect = document.querySelector('select');
+            const specialEventFields = document.querySelector('.special-event-fields');
+
+            inquirySelect.addEventListener('change', function() {
+                if (this.value === 'special-event') {
+                    specialEventFields.classList.remove('hidden');
+                    specialEventFields.classList.add('animate-fade-in');
+                } else {
+                    specialEventFields.classList.add('hidden');
+                }
+            });
+        </script>
+    </body>
 </html>
