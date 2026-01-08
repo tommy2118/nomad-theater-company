@@ -1,0 +1,172 @@
+/* =============================================================================
+   TAILWIND CSS 4.x ENTRY POINT
+   Nomad Theater Company
+   ============================================================================= */
+
+@import "tailwindcss";
+
+/* =============================================================================
+   SOURCE PATHS
+
+   Tell Tailwind where to scan for class usage.
+   ============================================================================= */
+
+@source "../../../src/**/*.njk";
+@source "../../../src/**/*.md";
+@source "../../../src/**/*.html";
+
+/* =============================================================================
+   THEME CONFIGURATION
+
+   NTC Brand Colors and Typography
+   ============================================================================= */
+
+@theme {
+  /* ---------------------------------------------------------------------------
+     COLORS - NTC Brand Palette
+     --------------------------------------------------------------------------- */
+
+  --color-ntc-gold: #D4AF37;
+  --color-ntc-gold-light: #E5C76A;
+  --color-ntc-gold-dark: #B38B22;
+  --color-ntc-black: #1A1A1A;
+  --color-ntc-white: #FFFFFF;
+
+  /* ---------------------------------------------------------------------------
+     FONTS
+     --------------------------------------------------------------------------- */
+
+  --font-display: "Trajan Pro", serif;
+  --font-body: "Open Sans", system-ui, sans-serif;
+}
+
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ntc-gold);
+    outline-offset: 2px;
+  }
+}
+
+/* =============================================================================
+   COMPONENTS
+   ============================================================================= */
+
+@layer components {
+  /* Logo shadow effect */
+  .logo-shadow {
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+  }
+
+  /* Hero gradient overlay */
+  .hero-gradient {
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.7));
+  }
+
+  /* Gold border with glow */
+  .gold-border {
+    border: 1px solid var(--color-ntc-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply px-8 py-4 bg-ntc-gold text-ntc-black font-semibold rounded;
+    @apply hover:bg-ntc-gold-light transition-all transform hover:scale-105;
+    @apply focus:outline-none focus:ring-2 focus:ring-ntc-gold-dark;
+  }
+
+  /* Secondary/outline button */
+  .btn-secondary {
+    @apply px-8 py-4 border-2 border-ntc-gold text-ntc-gold font-semibold rounded;
+    @apply hover:bg-ntc-gold hover:text-ntc-black transition-all transform hover:scale-105;
+  }
+
+  /* Form input styling */
+  .form-input {
+    @apply w-full px-4 py-3 bg-ntc-black border border-ntc-gold rounded-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-ntc-gold-light;
+    @apply placeholder-ntc-white/30;
+  }
+
+  /* Prose styling for gold theme */
+  .prose-gold {
+    --tw-prose-headings: var(--color-ntc-gold);
+    --tw-prose-links: var(--color-ntc-gold);
+    --tw-prose-bold: var(--color-ntc-white);
+    --tw-prose-body: var(--color-ntc-white);
+  }
+
+  /* Production card - use class="group" in HTML for hover effects */
+  .production-card {
+    @apply relative overflow-hidden rounded-lg;
+  }
+
+  .production-card-image {
+    @apply w-full h-80 object-cover transition-transform duration-500;
+  }
+
+  .production-card:hover .production-card-image {
+    transform: scale(1.05);
+  }
+
+  .production-card-overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(to top, var(--color-ntc-black) 0%, transparent 100%);
+  }
+
+  .production-card-content {
+    @apply absolute bottom-0 left-0 right-0 p-6;
+  }
+
+  /* Support card */
+  .support-card {
+    @apply bg-ntc-black p-8 rounded-lg;
+  }
+}
+
+/* =============================================================================
+   UTILITIES
+   ============================================================================= */
+
+@layer utilities {
+  /* Animation classes for scroll-triggered animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered animation delays */
+  .animate-delay-100 {
+    transition-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    transition-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    transition-delay: 300ms;
+  }
+}

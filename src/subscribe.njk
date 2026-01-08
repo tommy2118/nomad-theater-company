@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+title: Subscribe
+description: Become a Nomad Theater Company subscriber. Get early access, discounted tickets, and exclusive content.
+---
+
+<div class="pt-24">
+  {# Hero #}
+  <section class="py-16 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-display text-ntc-gold mb-6" data-animate="fade-up">Season Subscription</h1>
+      <p class="text-xl text-ntc-white/80" data-animate="fade-up" data-animate-delay="100">
+        Join our subscriber community and never miss a performance.
+      </p>
+    </div>
+  </section>
+
+  {# Benefits #}
+  <section class="py-16 bg-ntc-black">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="gold-border rounded-lg p-8 md:p-12" data-animate="fade-up">
+        <h2 class="text-3xl font-display text-ntc-gold mb-8 text-center">Subscriber Benefits</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="flex items-start space-x-4">
+            <div class="text-2xl text-ntc-gold">🎟️</div>
+            <div>
+              <h3 class="text-xl font-semibold text-ntc-gold mb-2">Early Access</h3>
+              <p class="text-ntc-white/80">Be the first to know about our season schedule and reserve your seats before general sales.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="text-2xl text-ntc-gold">💰</div>
+            <div>
+              <h3 class="text-xl font-semibold text-ntc-gold mb-2">Discounted Tickets</h3>
+              <p class="text-ntc-white/80">Enjoy special subscriber pricing on all productions throughout the season.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="text-2xl text-ntc-gold">🎬</div>
+            <div>
+              <h3 class="text-xl font-semibold text-ntc-gold mb-2">Behind the Scenes</h3>
+              <p class="text-ntc-white/80">Exclusive access to rehearsal photos, director's notes, and cast interviews.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="text-2xl text-ntc-gold">💺</div>
+            <div>
+              <h3 class="text-xl font-semibold text-ntc-gold mb-2">Priority Seating</h3>
+              <p class="text-ntc-white/80">Get the best seats in the house with priority reservation for subscribers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-lg text-ntc-white/80 mb-6">
+            Subscription details for the 2025 season coming soon. Sign up to be notified when subscriptions open.
+          </p>
+          <a href="/contact/" class="btn-primary">
+            Join the Waitlist
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Other Ways to Support #}
+  <section class="py-16 bg-gradient-to-b from-[#2A2A2A] to-ntc-black">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-display text-ntc-gold mb-6">Other Ways to Support</h2>
+      <p class="text-lg text-ntc-white/80 mb-8">
+        Can't commit to a subscription? There are other ways to support our mission.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/donate/" class="btn-secondary">Make a Donation</a>
+        {% if site.social.patreon %}
+        <a href="{{ site.social.patreon }}" target="_blank" rel="noopener" class="btn-secondary">Become a Patron</a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</div>

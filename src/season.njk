@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+title: 2025 Season
+description: View Nomad Theater Company's 2025 season lineup. From musicals to Shakespeare, experience professional theater in your community.
+---
+
+<div class="pt-24">
+  {# Hero #}
+  <section class="py-16 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-display text-ntc-gold mb-6" data-animate="fade-up">2025 Season</h1>
+      <p class="text-xl text-ntc-white/80" data-animate="fade-up" data-animate-delay="100">
+        Four extraordinary productions coming to venues near you.
+      </p>
+    </div>
+  </section>
+
+  {# Productions Grid #}
+  <section class="py-16 bg-ntc-black">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12">
+        {% for production in collections.productions %}
+        <div class="production-card gold-border" data-animate="fade-up" data-animate-delay="{{ loop.index0 * 100 }}">
+          <img src="{{ production.data.image }}" alt="{{ production.data.imageAlt | default(production.data.title) }}" class="production-card-image">
+          <div class="production-card-overlay"></div>
+          <div class="production-card-content">
+            <span class="text-sm text-ntc-gold-light uppercase tracking-wider">{{ production.data.category }}</span>
+            <h2 class="text-2xl font-display text-ntc-gold mb-2">{{ production.data.title }}</h2>
+            <p class="text-ntc-white/80 mb-4">{{ production.data.description }}</p>
+            <a href="{{ production.url }}" class="inline-block text-ntc-gold hover:text-ntc-gold-light transition-colors">
+              Learn More →
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# Subscribe CTA #}
+  <section class="py-16 bg-gradient-to-b from-[#2A2A2A] to-ntc-black">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-display text-ntc-gold mb-6">Don't Miss a Show</h2>
+      <p class="text-lg text-ntc-white/80 mb-8">
+        Subscribe to our season for early access, discounted tickets, and exclusive content.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/subscribe/" class="btn-primary">Subscribe Now</a>
+        <a href="/contact/" class="btn-secondary">Get Notified</a>
+      </div>
+    </div>
+  </section>
+</div>

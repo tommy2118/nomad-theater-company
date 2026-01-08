@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.language | default('en') }}">
+  <head>
+    {% include "partials/head.njk" %}
+  </head>
+  <body class="bg-ntc-black text-ntc-white min-h-screen flex flex-col" data-controller="animate">
+    {% include "partials/nav.njk" %}
+
+    <main class="flex-1">
+      {{ content | safe }}
+    </main>
+
+    {% include "partials/footer.njk" %}
+    {% include "partials/scripts.njk" %}
+  </body>
+</html>

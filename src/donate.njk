@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+title: Donate
+description: Make a donation to Nomad Theater Company. Your support helps us bring professional theater to communities everywhere.
+---
+
+<div class="pt-24">
+  {# Hero #}
+  <section class="py-16 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-display text-ntc-gold mb-6" data-animate="fade-up">Make a Donation</h1>
+      <p class="text-xl text-ntc-white/80" data-animate="fade-up" data-animate-delay="100">
+        Your generosity helps us bring the magic of theater to communities everywhere.
+      </p>
+    </div>
+  </section>
+
+  {# Why Donate #}
+  <section class="py-16 bg-ntc-black">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="gold-border rounded-lg p-8 md:p-12" data-animate="fade-up">
+        <h2 class="text-3xl font-display text-ntc-gold mb-8 text-center">Your Impact</h2>
+
+        <div class="space-y-8 mb-12">
+          <div class="flex items-start space-x-4">
+            <div class="text-2xl text-ntc-gold">🎭</div>
+            <div>
+              <h3 class="text-xl font-semibold text-ntc-gold mb-2">Support Productions</h3>
+              <p class="text-ntc-white/80">Your donation helps cover the costs of sets, costumes, lighting, and everything needed to create memorable performances.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="text-2xl text-ntc-gold">🎫</div>
+            <div>
+              <h3 class="text-xl font-semibold text-ntc-gold mb-2">Keep Tickets Affordable</h3>
+              <p class="text-ntc-white/80">Donations allow us to keep ticket prices accessible so everyone in the community can experience live theater.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="text-2xl text-ntc-gold">🌍</div>
+            <div>
+              <h3 class="text-xl font-semibold text-ntc-gold mb-2">Reach New Communities</h3>
+              <p class="text-ntc-white/80">Help us travel to venues across the region, bringing professional theater to communities that might not otherwise have access.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-lg text-ntc-white/80 mb-6">
+            Donation platform coming soon. In the meantime, please contact us directly to make a donation.
+          </p>
+          <a href="/contact/" class="btn-primary">
+            Contact Us to Donate
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Other Ways to Give #}
+  <section class="py-16 bg-gradient-to-b from-[#2A2A2A] to-ntc-black">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-display text-ntc-gold mb-6">Other Ways to Give</h2>
+      <p class="text-lg text-ntc-white/80 mb-8">
+        Join our ongoing community of supporters through Patreon for recurring monthly support.
+      </p>
+      {% if site.social.patreon %}
+      <a href="{{ site.social.patreon }}" target="_blank" rel="noopener" class="btn-secondary">
+        Become a Patron
+      </a>
+      {% endif %}
+    </div>
+  </section>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "Nomad Theater Company",
+  "title": "Professional Theater Productions",
+  "tagline": "Professional Theater, Anywhere and Everywhere",
+  "description": "Nomad Theater Company brings quality professional theater to communities everywhere. View our current season, support local theater, and join us for unforgettable performances.",
+  "url": "https://nomadtheatercompany.com",
+  "email": "nomadtheatercompany@gmail.com",
+  "author": {
+    "name": "Nomad Theater Company",
+    "email": "nomadtheatercompany@gmail.com"
+  },
+  "language": "en",
+  "theme": {
+    "color": "#1A1A1A"
+  },
+  "social": {
+    "patreon": "https://www.patreon.com/"
+  },
+  "stats": {
+    "audienceMembers": "1,200+",
+    "productionsPerYear": "4",
+    "communityFocused": "100%"
+  }
+}

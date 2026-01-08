@@ -1,0 +1,205 @@
+---
+layout: layouts/base.njk
+title: Home
+description: Nomad Theater Company brings quality professional theater to communities everywhere. View our current season, support local theater, and join us for unforgettable performances.
+---
+
+{# Hero Section #}
+<section class="relative min-h-screen flex items-center justify-center">
+  <div class="absolute inset-0 bg-[url('/assets/images/theater-bg.webp')] bg-cover bg-center"></div>
+  <div class="absolute inset-0 hero-gradient"></div>
+  <div class="relative z-10 max-w-4xl mx-auto text-center px-4" data-animate="fade-up">
+    <img src="/assets/images/ntc-logo.webp" alt="{{ site.name }}" class="w-48 h-48 mx-auto mb-8 logo-shadow">
+    <h1 class="text-5xl md:text-7xl font-display text-ntc-white mb-6">
+      {{ site.name }}
+    </h1>
+    <p class="text-xl md:text-2xl text-ntc-gold mb-12">
+      {{ site.tagline }}
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-6">
+      <a href="/season/" class="btn-primary">
+        View 2025 Season
+      </a>
+      <a href="/contact/#booking" class="btn-secondary">
+        Book NTC
+      </a>
+      <a href="/support/" class="btn-secondary">
+        Support the Arts
+      </a>
+    </div>
+  </div>
+</section>
+
+{# Support the Arts Section #}
+<section id="support" class="py-24 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-display text-center text-ntc-gold mb-16">Support Local Theater</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {# Subscription Card #}
+      <div class="support-card gold-border" data-animate="fade-up">
+        <div class="text-center mb-6">
+          <div class="text-4xl text-ntc-gold mb-4">🎭</div>
+          <h3 class="text-2xl font-display text-ntc-gold">Season Subscription</h3>
+        </div>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-start">
+            <span class="text-ntc-gold mr-2">✓</span>
+            <span>Early access to season schedule</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-ntc-gold mr-2">✓</span>
+            <span>Discounted ticket prices</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-ntc-gold mr-2">✓</span>
+            <span>Exclusive behind-the-scenes content</span>
+          </li>
+        </ul>
+        <a href="/subscribe/" class="block text-center py-3 bg-ntc-gold text-ntc-black rounded-lg hover:bg-ntc-gold-light transition-colors">
+          Subscribe Now
+        </a>
+      </div>
+
+      {# Donation Card #}
+      <div class="support-card gold-border" data-animate="fade-up" data-animate-delay="100">
+        <div class="text-center mb-6">
+          <div class="text-4xl text-ntc-gold mb-4">🎁</div>
+          <h3 class="text-2xl font-display text-ntc-gold">Make a Donation</h3>
+        </div>
+        <p class="mb-8">Your contribution helps us bring quality theater to our community, covering production costs and keeping ticket prices accessible.</p>
+        <a href="/donate/" class="block text-center py-3 border-2 border-ntc-gold text-ntc-gold rounded-lg hover:bg-ntc-gold hover:text-ntc-black transition-colors">
+          Donate Today
+        </a>
+      </div>
+
+      {# Special Events Card #}
+      <div class="support-card gold-border" data-animate="fade-up" data-animate-delay="200">
+        <div class="text-center mb-6">
+          <div class="text-4xl text-ntc-gold mb-4">⭐</div>
+          <h3 class="text-2xl font-display text-ntc-gold">Special Events</h3>
+        </div>
+        <p class="mb-8">Interested in having Nomad Theater Company perform at your charity event or community gathering?</p>
+        <a href="/contact/" class="block text-center py-3 border-2 border-ntc-gold text-ntc-gold rounded-lg hover:bg-ntc-gold hover:text-ntc-black transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Featured Productions #}
+<section class="py-24 bg-ntc-black">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-display text-center text-ntc-gold mb-16">Current Productions</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      {% for production in collections.productions | head(4) %}
+      <div class="production-card gold-border">
+        <img src="{{ production.data.image }}" alt="{{ production.data.imageAlt | default(production.data.title) }}" class="production-card-image">
+        <div class="production-card-overlay"></div>
+        <div class="production-card-content">
+          <h3 class="text-2xl font-display text-ntc-gold mb-2">{{ production.data.title }}</h3>
+          <p class="text-ntc-white">{{ production.data.category }}</p>
+          <a href="{{ production.url }}" class="block text-ntc-gold mt-4 hover:text-ntc-gold-light transition-colors">
+            Learn More
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# Community Impact Section #}
+<section class="py-24 bg-gradient-to-b from-[#2A2A2A] to-ntc-black">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-display text-center text-ntc-gold mb-16">Our Impact</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="p-6" data-animate="fade-up">
+        <div class="text-4xl font-bold text-ntc-gold mb-4">{{ site.stats.audienceMembers }}</div>
+        <div class="text-lg">Annual Audience Members</div>
+      </div>
+      <div class="p-6" data-animate="fade-up" data-animate-delay="100">
+        <div class="text-4xl font-bold text-ntc-gold mb-4">{{ site.stats.productionsPerYear }}</div>
+        <div class="text-lg">Productions Per Year</div>
+      </div>
+      <div class="p-6" data-animate="fade-up" data-animate-delay="200">
+        <div class="text-4xl font-bold text-ntc-gold mb-4">{{ site.stats.communityFocused }}</div>
+        <div class="text-lg">Community Focused</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Contact Form Section #}
+<section id="contact" class="py-24 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-4xl font-display text-center text-ntc-gold mb-6">Contact Us</h2>
+    <p class="text-center text-ntc-white/80 mb-16 max-w-2xl mx-auto">
+      Have a question about our productions? Interested in collaborating on a community event?
+      We'd love to hear from you.
+    </p>
+
+    <form class="space-y-8" action="https://api.web3forms.com/submit" method="POST" data-controller="form" data-action="submit->form#submit">
+      <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY">
+
+      {# Name and Email #}
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <label class="block text-ntc-gold mb-2">Name</label>
+          <input type="text" name="name" required class="form-input">
+        </div>
+        <div>
+          <label class="block text-ntc-gold mb-2">Email</label>
+          <input type="email" name="email" required class="form-input">
+        </div>
+      </div>
+
+      {# Inquiry Type #}
+      <div>
+        <label class="block text-ntc-gold mb-2">Type of Inquiry</label>
+        <select name="inquiry_type" required class="form-input text-ntc-white" data-form-target="inquiryType" data-action="change->form#toggleConditional">
+          <option value="">Select Inquiry Type</option>
+          <option value="general">General Question</option>
+          <option value="tickets">Ticket Information</option>
+          <option value="support">Support & Donations</option>
+          <option value="special-event">Special Event Collaboration</option>
+          <option value="press">Press & Media</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      {# Special Event Details (conditionally shown) #}
+      <div class="hidden" data-form-target="conditionalFields">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <label class="block text-ntc-gold mb-2">Event Date (if applicable)</label>
+            <input type="date" name="event_date" class="form-input">
+          </div>
+          <div>
+            <label class="block text-ntc-gold mb-2">Event Location</label>
+            <input type="text" name="event_location" class="form-input" placeholder="City, State">
+          </div>
+        </div>
+      </div>
+
+      {# Message #}
+      <div>
+        <label class="block text-ntc-gold mb-2">Message</label>
+        <textarea name="message" required rows="4" class="form-input" placeholder="Tell us more about your inquiry..."></textarea>
+      </div>
+
+      {# Subscribe Option #}
+      <div class="flex items-center space-x-3">
+        <input type="checkbox" id="subscribe" name="subscribe" class="w-5 h-5 bg-ntc-black border border-ntc-gold rounded focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
+        <label for="subscribe" class="text-ntc-white/80">
+          Keep me updated about upcoming productions and events
+        </label>
+      </div>
+
+      {# Submit Button #}
+      <button type="submit" class="w-full btn-primary" data-form-target="submitButton">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>

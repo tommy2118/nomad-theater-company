@@ -1,0 +1,120 @@
+---
+layout: layouts/base.njk
+title: Support
+description: Support Nomad Theater Company through subscriptions, donations, and partnerships. Help us bring theater to communities everywhere.
+---
+
+<div class="pt-24">
+  {# Hero #}
+  <section class="py-16 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-display text-ntc-gold mb-6" data-animate="fade-up">Support Local Theater</h1>
+      <p class="text-xl text-ntc-white/80" data-animate="fade-up" data-animate-delay="100">
+        Your support helps us bring professional theater to communities that need it most.
+      </p>
+    </div>
+  </section>
+
+  {# Support Options #}
+  <section class="py-16 bg-ntc-black">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        {# Subscription Card #}
+        <div class="support-card gold-border" data-animate="fade-up">
+          <div class="text-center mb-6">
+            <div class="text-4xl text-ntc-gold mb-4">🎭</div>
+            <h3 class="text-2xl font-display text-ntc-gold">Season Subscription</h3>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Early access to season schedule</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Discounted ticket prices</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Exclusive behind-the-scenes content</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Priority seating</span>
+            </li>
+          </ul>
+          <a href="/subscribe/" class="block text-center py-3 bg-ntc-gold text-ntc-black rounded-lg hover:bg-ntc-gold-light transition-colors font-semibold">
+            Subscribe Now
+          </a>
+        </div>
+
+        {# Donation Card #}
+        <div class="support-card gold-border" data-animate="fade-up" data-animate-delay="100">
+          <div class="text-center mb-6">
+            <div class="text-4xl text-ntc-gold mb-4">🎁</div>
+            <h3 class="text-2xl font-display text-ntc-gold">Make a Donation</h3>
+          </div>
+          <p class="mb-6">Your contribution helps us:</p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Cover production costs</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Keep ticket prices accessible</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Reach new communities</span>
+            </li>
+          </ul>
+          <a href="/donate/" class="block text-center py-3 border-2 border-ntc-gold text-ntc-gold rounded-lg hover:bg-ntc-gold hover:text-ntc-black transition-colors font-semibold">
+            Donate Today
+          </a>
+        </div>
+
+        {# Patron Card #}
+        <div class="support-card gold-border" data-animate="fade-up" data-animate-delay="200">
+          <div class="text-center mb-6">
+            <div class="text-4xl text-ntc-gold mb-4">⭐</div>
+            <h3 class="text-2xl font-display text-ntc-gold">Become a Patron</h3>
+          </div>
+          <p class="mb-6">Join our Patreon community for:</p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Monthly exclusive updates</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Behind-the-scenes access</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-ntc-gold mr-2">✓</span>
+              <span>Special patron events</span>
+            </li>
+          </ul>
+          {% if site.social.patreon %}
+          <a href="{{ site.social.patreon }}" target="_blank" rel="noopener" class="block text-center py-3 border-2 border-ntc-gold text-ntc-gold rounded-lg hover:bg-ntc-gold hover:text-ntc-black transition-colors font-semibold">
+            Join on Patreon
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Corporate Partnerships #}
+  <section class="py-16 bg-gradient-to-b from-[#2A2A2A] to-ntc-black">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-display text-ntc-gold mb-6" data-animate="fade-up">Corporate Partnerships</h2>
+      <p class="text-lg text-ntc-white/80 mb-8" data-animate="fade-up" data-animate-delay="100">
+        Partner with Nomad Theater Company to bring the arts to your community. We offer sponsorship opportunities, corporate performance packages, and community engagement programs.
+      </p>
+      <a href="/contact/" class="btn-primary" data-animate="fade-up" data-animate-delay="200">
+        Contact Us About Partnerships
+      </a>
+    </div>
+  </section>
+</div>

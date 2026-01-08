@@ -1,0 +1,13 @@
+{
+  "main": [
+    { "label": "Home", "url": "/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "2025 Season", "url": "/season/" },
+    { "label": "Support", "url": "/support/" },
+    { "label": "Contact", "url": "/contact/" }
+  ],
+  "footer": [
+    { "label": "Subscribe", "url": "/subscribe/" },
+    { "label": "Donate", "url": "/donate/" }
+  ]
+}

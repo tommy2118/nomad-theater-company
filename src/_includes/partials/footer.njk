@@ -1,0 +1,53 @@
+<footer class="bg-ntc-black py-16 gold-border border-b-0 border-x-0">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-12">
+      {# Logo and Email #}
+      <div>
+        <img src="/assets/images/ntc-logo.webp" alt="{{ site.name }}" class="h-24 w-auto mb-6 logo-shadow">
+        <a href="mailto:{{ site.email }}" class="text-ntc-gold hover:text-ntc-gold-light transition-colors">
+          {{ site.email }}
+        </a>
+      </div>
+
+      {# Quick Links #}
+      <div>
+        <h3 class="text-xl font-display text-ntc-gold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          {% for item in navigation.main %}
+          <li>
+            <a href="{{ item.url }}" class="text-ntc-white hover:text-ntc-gold transition-colors">
+              {{ item.label }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {# Support #}
+      <div>
+        <h3 class="text-xl font-display text-ntc-gold mb-6">Support Us</h3>
+        <ul class="space-y-3">
+          {% for item in navigation.footer %}
+          <li>
+            <a href="{{ item.url }}" class="text-ntc-white hover:text-ntc-gold transition-colors">
+              {{ item.label }}
+            </a>
+          </li>
+          {% endfor %}
+          {% if site.social.patreon %}
+          <li>
+            <a href="{{ site.social.patreon }}" class="text-ntc-white hover:text-ntc-gold transition-colors" target="_blank" rel="noopener">
+              Become a Patron
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+    {# Copyright #}
+    <div class="mt-12 pt-8 border-t border-ntc-gold/20 text-center">
+      <p class="text-ntc-white/60">&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

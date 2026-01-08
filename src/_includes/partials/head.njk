@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ title }}{% if title %} | {% endif %}{{ site.name }}</title>
+<meta name="description" content="{{ description | default(site.description) }}">
+
+{# Canonical URL #}
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+{# Open Graph #}
+<meta property="og:title" content="{{ title | default(site.name) }}">
+<meta property="og:description" content="{{ description | default(site.description) }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{% if image %}
+<meta property="og:image" content="{{ site.url }}{{ image }}">
+{% endif %}
+
+{# Twitter Card #}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title | default(site.name) }}">
+<meta name="twitter:description" content="{{ description | default(site.description) }}">
+
+{# Theme Color #}
+<meta name="theme-color" content="{{ site.theme.color | default('#1A1A1A') }}">
+
+{# Favicon #}
+<link rel="icon" href="/assets/images/ntc-logo.webp" type="image/webp">
+
+{# Google Fonts #}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+{# Stylesheet #}
+<link rel="stylesheet" href="/assets/css/main.css">

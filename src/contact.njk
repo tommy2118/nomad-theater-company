@@ -1,0 +1,118 @@
+---
+layout: layouts/base.njk
+title: Contact
+description: Get in touch with Nomad Theater Company. Ask questions, book performances, or collaborate with us.
+---
+
+<div class="pt-24">
+  {# Hero #}
+  <section class="py-16 bg-gradient-to-b from-ntc-black to-[#2A2A2A]">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-display text-ntc-gold mb-6" data-animate="fade-up">Contact Us</h1>
+      <p class="text-xl text-ntc-white/80" data-animate="fade-up" data-animate-delay="100">
+        Have a question about our productions? Interested in collaborating on a community event?
+        We'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  {# Contact Info + Form #}
+  <section class="py-16 bg-ntc-black">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-12">
+        {# Contact Info #}
+        <div class="md:col-span-1">
+          <div class="gold-border rounded-lg p-8" data-animate="fade-up">
+            <h2 class="text-2xl font-display text-ntc-gold mb-6">Get in Touch</h2>
+
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-ntc-gold font-semibold mb-2">Email</h3>
+                <a href="mailto:{{ site.email }}" class="text-ntc-white hover:text-ntc-gold-light transition-colors">
+                  {{ site.email }}
+                </a>
+              </div>
+
+              <div>
+                <h3 class="text-ntc-gold font-semibold mb-2">Follow Us</h3>
+                <p class="text-ntc-white/80">Stay updated on our latest productions and events.</p>
+              </div>
+
+              <div id="booking">
+                <h3 class="text-ntc-gold font-semibold mb-2">Book NTC</h3>
+                <p class="text-ntc-white/80">Interested in having us perform at your venue or event? Use the form to tell us about your opportunity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {# Contact Form #}
+        <div class="md:col-span-2">
+          <form class="space-y-8 gold-border rounded-lg p-8" action="https://api.web3forms.com/submit" method="POST" data-controller="form" data-action="submit->form#submit" data-animate="fade-up" data-animate-delay="100">
+            <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY">
+
+            {# Name and Email #}
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <label class="block text-ntc-gold mb-2">Name</label>
+                <input type="text" name="name" required class="form-input">
+              </div>
+              <div>
+                <label class="block text-ntc-gold mb-2">Email</label>
+                <input type="email" name="email" required class="form-input">
+              </div>
+            </div>
+
+            {# Inquiry Type #}
+            <div>
+              <label class="block text-ntc-gold mb-2">Type of Inquiry</label>
+              <select name="inquiry_type" required class="form-input text-ntc-white" data-form-target="inquiryType" data-action="change->form#toggleConditional">
+                <option value="">Select Inquiry Type</option>
+                <option value="general">General Question</option>
+                <option value="tickets">Ticket Information</option>
+                <option value="support">Support & Donations</option>
+                <option value="special-event">Special Event Collaboration</option>
+                <option value="booking">Venue/Performance Booking</option>
+                <option value="press">Press & Media</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            {# Special Event Details #}
+            <div class="hidden" data-form-target="conditionalFields">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <label class="block text-ntc-gold mb-2">Event Date</label>
+                  <input type="date" name="event_date" class="form-input">
+                </div>
+                <div>
+                  <label class="block text-ntc-gold mb-2">Event Location</label>
+                  <input type="text" name="event_location" class="form-input" placeholder="City, State">
+                </div>
+              </div>
+            </div>
+
+            {# Message #}
+            <div>
+              <label class="block text-ntc-gold mb-2">Message</label>
+              <textarea name="message" required rows="6" class="form-input" placeholder="Tell us more about your inquiry..."></textarea>
+            </div>
+
+            {# Subscribe Option #}
+            <div class="flex items-center space-x-3">
+              <input type="checkbox" id="subscribe" name="subscribe" class="w-5 h-5 bg-ntc-black border border-ntc-gold rounded focus:outline-none focus:ring-2 focus:ring-ntc-gold-light">
+              <label for="subscribe" class="text-ntc-white/80">
+                Keep me updated about upcoming productions and events
+              </label>
+            </div>
+
+            {# Submit Button #}
+            <button type="submit" class="w-full btn-primary" data-form-target="submitButton">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
