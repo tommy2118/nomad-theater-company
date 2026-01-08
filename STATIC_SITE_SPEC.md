@@ -1,7 +1,7 @@
 # Static Site Specification
 
-**Version:** 1.1.0
-**Last Updated:** January 2026
+**Version:** 1.2.0
+**Last Updated:** 8 January 2026
 **Author:** Tommy A. Caruso Sr.
 
 ---
@@ -1484,6 +1484,43 @@ Before marking a site "done," verify:
 2. Check repository Pages settings
 3. Verify `dist/` contains expected files
 
+### GitHub Pages Assets Not Loading (Project Sites)
+
+**Symptom:** Site deploys but CSS, JS, images return 404. Works locally.
+
+**Cause:** GitHub Pages project sites (username.github.io/repo-name) require a path prefix. The `| url` filter must be applied to ALL paths.
+
+**Fix:**
+
+1. Enable pathPrefix in `eleventy.config.js`:
+```javascript
+return {
+  // ...
+  pathPrefix: process.env.GITHUB_ACTIONS ? "/repo-name/" : "/",
+};
+```
+
+2. Apply `| url` filter to EVERY internal path:
+
+```nunjucks
+{# Static asset paths #}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+<script src="{{ '/assets/js/application.js' | url }}"></script>
+<img src="{{ '/assets/images/logo.png' | url }}">
+
+{# Navigation links #}
+<a href="{{ '/' | url }}">Home</a>
+<a href="{{ '/about/' | url }}">About</a>
+
+{# Collection URLs (CRITICAL - easy to miss!) #}
+{% for item in collections.posts %}
+  <a href="{{ item.url | url }}">{{ item.data.title }}</a>
+  <img src="{{ item.data.image | url }}">
+{% endfor %}
+```
+
+**Common mistake:** Forgetting `| url` on collection item paths like `item.url` or `item.data.image`. These are dynamically generated and still need the filter.
+
 ### Cannot Apply Unknown Utility Class `group`
 
 **Symptom:** Build fails with error `Cannot apply unknown utility class 'group'`
@@ -1500,6 +1537,76 @@ Before marking a site "done," verify:
 ```
 
 See Migration Notes for full example.
+
+### Tailwind Typography (Prose) Not Styling Content
+
+**Symptom:** Markdown content renders as plain unstyled text. `prose` classes have no effect.
+
+**Cause:** Tailwind 4 does not include `@tailwindcss/typography` by default. The `prose` utility classes don't exist unless you add the plugin.
+
+**Fix:** Create custom prose styles in `main.css`:
+
+```css
+@layer components {
+  /* Custom prose for markdown content */
+  .prose-custom {
+    @apply leading-relaxed;
+  }
+
+  .prose-custom h2 {
+    @apply text-2xl font-bold mt-8 mb-4;
+  }
+
+  .prose-custom h3 {
+    @apply text-xl font-semibold mt-6 mb-3;
+  }
+
+  .prose-custom p {
+    @apply mb-4;
+  }
+
+  .prose-custom strong {
+    @apply font-semibold;
+  }
+
+  .prose-custom em {
+    @apply italic;
+  }
+
+  .prose-custom ul, .prose-custom ol {
+    @apply mb-4 ml-6;
+  }
+
+  .prose-custom li {
+    @apply mb-2;
+  }
+
+  .prose-custom ul li {
+    @apply list-disc;
+  }
+
+  .prose-custom ol li {
+    @apply list-decimal;
+  }
+
+  .prose-custom a {
+    @apply underline hover:no-underline transition-colors;
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-4 pl-4 italic my-4;
+  }
+}
+```
+
+Then use in templates:
+```nunjucks
+<div class="prose-custom">
+  {{ content | safe }}
+</div>
+```
+
+**Alternative:** Install `@tailwindcss/typography` plugin if you need full prose features.
 
 ---
 
@@ -1547,11 +1654,28 @@ See Migration Notes for full example.
 Sites built to this specification serve as reference implementations:
 
 1. **[carpinte.ro]** — Woodworking portfolio (first implementation)
-2. **[Additional sites as built]**
+2. **[nomad-theater-company]** — Community theater website (GitHub Pages project site)
 
 ---
 
 ## APPENDIX D: Changelog
+
+### v1.2.0 (8 January 2026)
+
+Learnings from nomad-theater-company implementation:
+
+**Added:**
+- Troubleshooting: GitHub Pages assets not loading (project sites)
+- Troubleshooting: Tailwind typography (prose) not styling content
+- Explicit `| url` filter requirement for collection item paths
+- Custom prose component pattern for markdown content styling
+
+**Clarified:**
+- `| url` filter must be applied to ALL paths including dynamic collection data
+- Tailwind 4 does not include typography plugin by default
+- GitHub Pages project sites require pathPrefix AND url filters everywhere
+
+**Reference:** nomad-theater-company (community theater site with productions collection)
 
 ### v1.1.0 (January 2026)
 
