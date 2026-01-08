@@ -6,10 +6,10 @@ description: Nomad Theater Company brings quality professional theater to commun
 
 {# Hero Section #}
 <section class="relative min-h-screen flex items-center justify-center">
-  <div class="absolute inset-0 bg-[url('/assets/images/theater-bg.webp')] bg-cover bg-center"></div>
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ '/assets/images/theater-bg.webp' | url }}')"></div>
   <div class="absolute inset-0 hero-gradient"></div>
   <div class="relative z-10 max-w-4xl mx-auto text-center px-4" data-animate="fade-up">
-    <img src="/assets/images/ntc-logo.webp" alt="{{ site.name }}" class="w-48 h-48 mx-auto mb-8 logo-shadow">
+    <img src="{{ '/assets/images/ntc-logo.webp' | url }}" alt="{{ site.name }}" class="w-48 h-48 mx-auto mb-8 logo-shadow">
     <h1 class="text-5xl md:text-7xl font-display text-ntc-white mb-6">
       {{ site.name }}
     </h1>

@@ -117,5 +117,7 @@ export default function (eleventyConfig) {
     templateFormats: ["njk", "md", "html"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
+    // GitHub Pages project site prefix
+    pathPrefix: process.env.GITHUB_ACTIONS ? "/nomad-theater-company/" : "/",
   };
 }
