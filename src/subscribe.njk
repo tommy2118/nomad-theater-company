@@ -59,7 +59,7 @@ description: Become a Nomad Theater Company subscriber. Get early access, discou
           <p class="text-lg text-ntc-white/80 mb-6">
             Subscription details for the 2025 season coming soon. Sign up to be notified when subscriptions open.
           </p>
-          <a href="/contact/" class="btn-primary">
+          <a href="{{ '/contact/' | url }}" class="btn-primary">
             Join the Waitlist
           </a>
         </div>
@@ -75,7 +75,7 @@ description: Become a Nomad Theater Company subscriber. Get early access, discou
         Can't commit to a subscription? There are other ways to support our mission.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/donate/" class="btn-secondary">Make a Donation</a>
+        <a href="{{ '/donate/' | url }}" class="btn-secondary">Make a Donation</a>
         {% if site.social.patreon %}
         <a href="{{ site.social.patreon }}" target="_blank" rel="noopener" class="btn-secondary">Become a Patron</a>
         {% endif %}

@@ -3,7 +3,7 @@
     <div class="flex justify-between h-24 items-center">
       {# Logo #}
       <div class="flex-shrink-0">
-        <a href="/" class="flex items-center space-x-4">
+        <a href="{{ '/' | url }}" class="flex items-center space-x-4">
           <img src="{{ '/assets/images/ntc-logo.webp' | url }}" alt="{{ site.name }}" class="h-16 w-auto logo-shadow">
         </a>
       </div>
@@ -13,7 +13,7 @@
         {% for item in navigation.main %}
         <li>
           <a
-            href="{{ item.url }}"
+            href="{{ item.url | url }}"
             class="{% if page.url == item.url %}text-ntc-gold{% else %}text-ntc-white{% endif %} hover:text-ntc-gold-light transition-colors"
           >
             {{ item.label }}
@@ -46,7 +46,7 @@
         {% for item in navigation.main %}
         <li>
           <a
-            href="{{ item.url }}"
+            href="{{ item.url | url }}"
             class="block py-2 {% if page.url == item.url %}text-ntc-gold{% else %}text-ntc-white{% endif %} hover:text-ntc-gold-light transition-colors"
           >
             {{ item.label }}

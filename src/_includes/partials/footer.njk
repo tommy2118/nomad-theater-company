@@ -15,7 +15,7 @@
         <ul class="space-y-3">
           {% for item in navigation.main %}
           <li>
-            <a href="{{ item.url }}" class="text-ntc-white hover:text-ntc-gold transition-colors">
+            <a href="{{ item.url | url }}" class="text-ntc-white hover:text-ntc-gold transition-colors">
               {{ item.label }}
             </a>
           </li>
@@ -29,7 +29,7 @@
         <ul class="space-y-3">
           {% for item in navigation.footer %}
           <li>
-            <a href="{{ item.url }}" class="text-ntc-white hover:text-ntc-gold transition-colors">
+            <a href="{{ item.url | url }}" class="text-ntc-white hover:text-ntc-gold transition-colors">
               {{ item.label }}
             </a>
           </li>
