@@ -104,12 +104,49 @@
     @apply placeholder-ntc-white/30;
   }
 
-  /* Prose styling for gold theme */
+  /* Prose styling for gold theme - markdown content */
   .prose-gold {
-    --tw-prose-headings: var(--color-ntc-gold);
-    --tw-prose-links: var(--color-ntc-gold);
-    --tw-prose-bold: var(--color-ntc-white);
-    --tw-prose-body: var(--color-ntc-white);
+    @apply text-ntc-white/90 leading-relaxed;
+  }
+
+  .prose-gold h2 {
+    @apply text-2xl font-display text-ntc-gold mt-8 mb-4;
+  }
+
+  .prose-gold h3 {
+    @apply text-xl font-display text-ntc-gold mt-6 mb-3;
+  }
+
+  .prose-gold p {
+    @apply mb-4;
+  }
+
+  .prose-gold strong {
+    @apply text-ntc-white font-semibold;
+  }
+
+  .prose-gold em {
+    @apply text-ntc-gold-light;
+  }
+
+  .prose-gold ul, .prose-gold ol {
+    @apply mb-4 ml-6;
+  }
+
+  .prose-gold li {
+    @apply mb-2;
+  }
+
+  .prose-gold ul li {
+    @apply list-disc;
+  }
+
+  .prose-gold ol li {
+    @apply list-decimal;
+  }
+
+  .prose-gold a {
+    @apply text-ntc-gold hover:text-ntc-gold-light underline transition-colors;
   }
 
   /* Production card - use class="group" in HTML for hover effects */
