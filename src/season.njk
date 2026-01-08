@@ -21,13 +21,13 @@ description: View Nomad Theater Company's 2025 season lineup. From musicals to S
       <div class="grid md:grid-cols-2 gap-12">
         {% for production in collections.productions %}
         <div class="production-card gold-border" data-animate="fade-up" data-animate-delay="{{ loop.index0 * 100 }}">
-          <img src="{{ production.data.image }}" alt="{{ production.data.imageAlt | default(production.data.title) }}" class="production-card-image">
+          <img src="{{ production.data.image | url }}" alt="{{ production.data.imageAlt | default(production.data.title) }}" class="production-card-image">
           <div class="production-card-overlay"></div>
           <div class="production-card-content">
             <span class="text-sm text-ntc-gold-light uppercase tracking-wider">{{ production.data.category }}</span>
             <h2 class="text-2xl font-display text-ntc-gold mb-2">{{ production.data.title }}</h2>
             <p class="text-ntc-white/80 mb-4">{{ production.data.description }}</p>
-            <a href="{{ production.url }}" class="inline-block text-ntc-gold hover:text-ntc-gold-light transition-colors">
+            <a href="{{ production.url | url }}" class="inline-block text-ntc-gold hover:text-ntc-gold-light transition-colors">
               Learn More →
             </a>
           </div>

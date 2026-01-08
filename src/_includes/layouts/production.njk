@@ -30,7 +30,7 @@ layout: layouts/base.njk
     <figure class="mb-12">
       <div class="relative overflow-hidden rounded-lg gold-border">
         <img
-          src="{{ image }}"
+          src="{{ image | url }}"
           alt="{{ imageAlt | default(title) }}"
           class="w-full aspect-video object-cover"
         >
